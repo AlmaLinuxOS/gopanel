@@ -5,9 +5,6 @@ GoPanel Free Linux Web Hosting Control Panel
 <br>
 curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
 <br>
-<br>
-
-
 **How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?**
 Connect to your Linux server via SSH and run the following command as root:
 <br>
@@ -16,7 +13,6 @@ Connect to your Linux server via SSH and run the following command as root:
 Example:
 <br>
 /go/encoder blackhost.com mypassword
-
 **How to Restore Full cPanel Backup via Go Panel?**
 The first method is to restore the full cPanel backup via Go Panel. Of course, in order to be able to restore the backup using this method you need to have root access to Go Panel which is listening on port 2020. So if your domain is example.com, you can access Go Panel via web browser at http://example.com:2020.
 <br>
@@ -25,7 +21,6 @@ Once you log in to Go Panel, navigate to Backups and then select Restore a Full 
 To restore with file, you must upload the full cPanel backup file to the following directory:
 <br>
 /backup
-
 <br>
 <br>
 <b>Restore Full cPanel Backup via command line</b>. Yes, this is another method which some server admins find much easier than the first one. For this method you need to have SSH access to the server. Connect to your Linux server via SSH and run the following command as root:
@@ -83,7 +78,6 @@ Example:
 
 
 **How to Restore Folder from Remote Backup Server(Storage Box) to Local Go Panel Server?**
-
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/restore &ltRemote Folder Path&gt &ltLocal Folder Path&gt 
@@ -94,7 +88,6 @@ Example:
 
 
 **How to Restore Account from Remote Backup Server(Storage Box) to Local Go Panel Server?**
-
 Connect to your Linux server (Local Server) via SSH and run the following command as root:
 <br>
 /go/restore Domain BackupDate
@@ -127,17 +120,12 @@ Connect to your Linux server via SSH and run the following command as root:
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/myisam2innodb DatabaseName TableName
-
-
-
 **How to re-sorting id column in a MySQL table (Both PRIMARY KEY and AUTO INCREMEN)?**
-
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/reid DatabaseName TableName
 
 **How do I switch between NGINX and Apache web server?**
-
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 <b>Switch to NGINX:</b>
@@ -149,7 +137,6 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/apache
 
 **How to Install an SSL Certificate on a Domain?**
-
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/ssl domain.com
@@ -175,7 +162,6 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/installphp 7.1
 <br>
 /go/installphp 7.2
-
 
 **How to set Default PHP Version in GoPanel?**
 Connect to your Linux server via SSH and run the following command as root:
@@ -206,7 +192,6 @@ Wait 5 minutes then run:
 /go/index
 
 **Slow performance after securing websites with Lets Encrypt SSL**
-
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/resolver

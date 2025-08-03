@@ -1,9 +1,11 @@
 # GoPanel
 GoPanel Free Linux Web Hosting Control Panel
 
-Install GoPanel via command line:
+**Install GoPanel via command line:**
+<br>
 curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
-
+<br>
+<br>
 
 
 **How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?**

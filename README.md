@@ -22,525 +22,686 @@ https://go.w75.net
 https://www.gopanel.org/command.php
 <br><br>
 
-**How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/encoder Domain Key
-<br>
-Example:
-<br>
-/go/encoder blackhost.com mypassword
-<br>
 
-**How to Restore Full cPanel Backup via GoPanel?**
-<br>
-The first method is to restore the full cPanel backup via GoPanel. Of course, in order to be able to restore the backup using this method you need to have root access to GoPanel which is listening on port 2020. So if your domain is example.com, you can access GoPanel via web browser at http://example.com:2020.
-<br>
-Once you log in to GoPanel, navigate to Backups and then select Restore a Full Backup. This GoPanel feature will allow you to restore specific backup with File.
-<br>
-To restore with file, you must upload the full cPanel backup file to the following directory:
-<br>
-/backup
-<br>
-<br>
-<b>Restore Full cPanel Backup via command line</b>. Yes, this is another method which some server admins find much easier than the first one. For this method you need to have SSH access to the server. Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/restore example
-<br>
-Of course, you need to replace example with the actual cPanel username or filename.tar.gz for the account you want to restore. Also, make sure that the full cPanel backup is properly uploaded in the /backup directory on your server before starting the restoration process.
-<br>
-
-**How to backup GoPanel accounts from one server to another GoPanel server?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/backup all full scp RemoteIP root RemotePassword 22 /backup
-<br>
-or
-<br>
-/go/backup all RemoteIP RemotePassword
-<br>
-
-**How to transfer GoPanel accounts from one server to another GoPanel server?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/copy Domain RemoteIP RemotePassword
-<br>
-To copy all accounts:
-<br>
-/go/copy all RemoteIP RemotePassword
-<br>
-
-**How to Backup & Migrate GoPanel Server with All Configurations?**
-<br>
-Setting Up a Fresh Remote GoPanel Server Without Websites, Just Install GoPanel
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/clone RemoteIP RemotePassword
-<br>
-
-**How to copy GoPanel backup file from one server to another GoPanel server?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/scp filename.tar.gz RemoteIP RemotePassword
-<br>
-Or
-<br>
-/go/scp all RemoteIP RemotePassword
-<br>
-**How to Copy Folder from GoPanel Server to Remote Backup Server(Storage Box)?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/backup &ltLocal Folder Path&gt &ltRemote Folder Path&gt
-<br>
-Example:
-<br>
-/go/backup /home/ /backup/home/
-<br>
-(Setup Schedule Backup Required via Dashboard)
-<br>
-
-**How to Restore Folder from Remote Backup Server(Storage Box) to Local GoPanel Server?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/restore &ltRemote Folder Path&gt &ltLocal Folder Path&gt 
-<br>
-Example:
-<br>
-/go/restore /backup/home/ /home/
-<br>
-
-**How to Restore Account from Remote Backup Server(Storage Box) to Local GoPanel Server?**
-<br>
-Connect to your Linux server (Local Server) via SSH and run the following command as root:
-<br>
-/go/restore Domain BackupDate
-<br>
-Example:
-<br>
-/go/restore blackhost.com 2023-01-30
-<br>
-
-**How to Copy Database from Current Server to Another?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/copydatabase DatabaseName RemoteIP RemotePassword
-<br>
-
-**How to Copy Database Table from Current Server to Another?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/copytable DatabaseName TableName RemoteIP RemotePassword
-<br>
-**How to Convert Database from MyISAM  to InnoDB?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/myisam2innodb DatabaseName
-<br>
-**How to Convert Table from MyISAM  to InnoDB?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/myisam2innodb DatabaseName TableName
-
-**How to re-sorting id column in a MySQL table (Both PRIMARY KEY and AUTO INCREMEN)?**
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/reid DatabaseName TableName
-<br>
-**How do I switch between NGINX and Apache web server?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-<b>Switch to NGINX:</b>
-<br>
-/go/nginx
-<br>
-<b>Switch to Apache:</b>
-<br>
-/go/apache
-<br>
-
-**How to Install an SSL Certificate on a Domain?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/ssl domain.com
-<br>
-
-**How to Install an SSL Certificate for all domains?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/ssl all
-<br>
-<br>
-To Check SSL Certificate Run:
-<br>
-/go/checkssl
-<br>
-
-**How do I force a new SSL certificate?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/ssl all --force
-<br>
-**How to install PHP 7.1 and PHP 7.2 and all neccessary extensions?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/installphp 7.1
-<br>
-/go/installphp 7.2
-<br>
-
-**How to set Default PHP Version in GoPanel?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/defaultphp 7.4
-<br>
-php -v
-<br>
-**How to Solve 502 Bad Gateway Issues?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/conf
-<br>
-If the problem still persists run:
-<br>
-/go/reinstall
-<br>
-
-**How to Increase Websites Speed?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/resolver OpenDNS
-<br>
-<br>
-/go/index
-<br>
-Wait 5 minutes then run:
-<br>
-/go/index
-<br>
-
-**Slow performance after securing websites with Lets Encrypt SSL**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/resolver
-<br>
-or
-<br>
-/go/resolver OpenDNS
-<br>
-or
-<br>
-/go/resolver Cloudflare
-<br>
-
-**How do I access my webmail?**
-<br>
-<b>Steps for logging into webmail</b>
-<ol>
-<li>Visit example.com/webmail. Be sure to replace example.com with your actual domain name.</li>
-<li>Choose Roundcube or RainLoop or SquirrelMail as your default client.</li>
-<li>Enter your username and password, and then click login. User Name: Enter your full email address, all lower case.</li>
-<li>You should now be logged in!</li>
-</ol>
-<br>
-
-**How to change default SMTP port (25) in GoPanel?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/smtp 26
+**An A-Z Index of the GoPanel command line**
 <br><br>
-How do I get back to default settings?
-<br>
-/go/smtp 25
-<br>
 
-**How do I Update Roundcube?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/roundcube
-<br><br>
-How to Downgrade Roundcube?
-<br>
-/go/roundcube 1.3.9
-<br>
-
-**How to Install SquirrelMail on GoPanel?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/squirrelmail
-<br>
-
-**How to set limitations for outgoing email?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/smtplimit 30
-
-<br><br>
-30 emails per hour / user
-<br>
-
-**How To Get Emails Delivered to Inbox?**
-<br>
-To send emails and avoid them being classified as spam 
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/checksmtp
-<br>
-
-**How to detect which account is sending spam?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/spam now
-<br>
-<br>
-To get the mail queue count:
-/go/spam count
-<br>
-
-**How to Install ionCube Loader in GoPanel?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/ioncube
-<br>
-
-**How to Install GoPanel on Google Compute Engine (GCP) or (AWS)?**
-<br>
-Connect to your Linux (GCP) or (AWS) via SSH (Web Browsing) and run the following command:
-<br>
-Change the root password:
-<br>
-sudo passwd
-<br>
-Login as root:
-<br>
-su
-<br>
-Start Install GoPanel:
-<br>
-curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
-<br>
-**How to Install Gdown in GoPanel?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/gdown
-<br>
-<br>
-How to download a folder from google drive using terminal?
-<br>
-gdown --folder --id &ltfolder_id&gt
-<br><br>
-How to download a file from google drive using terminal?
-<br>
-gdown --id &ltfile_id&gt
-<br>
-**How do I set up nameservers?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/nameservers ns1.domain.com ns2.domain.com
-<br>
-**What does resetting a DNS zone do?**
-<br>
-If you add/delete DNS records and want to revert back to the original DNS, you can Reset the DNS Zone. This will remove all your custom DNS records and create the standard records for your domain.
-<br>
-<br>
-**How to Reset a DNS Zone in GoPanel?**
-<br>
-To reset zone for a domain
-<br>
-/go/zone domain.com reset
-<br>
+<a href='https://www.gopanel.org/command.php?Command=404top'>404top</a>: Block High Traffic 404 Visits on GoPanel Server
 
 <br>
-To reset zone for all domains
-<br>
-/go/zone all reset
 <br>
 
-**How do I upload files to my website?**
+<a href='https://www.gopanel.org/command.php?Command=addon'>addon</a>: Create an Addon Domain in GoPanel
 <br>
-You must either use FTP (file transfer protocol) client (<a href='https://www.gopanel.org/download/gopanel-ftp.exe'>Download GoPanel-FTP</a>), or upload via our File Manager located in your members' area. <b>www</b> is the only folder of which content is accessible to the browser, therefore all your website content must be uploaded there.
-<br>
-<br>
-Also, there must be a file named index.htm, index.html or index.php inside <b>www</b> directory for site to be working properly.
-<br>
-**How to Rebuild the Apache Configuration?**
-<br>
-To rebuild the Apache configuration file, run the following command as root:
-<br>
-/go/conf
 <br>
 
-**How to Reinstall Apache or NGINX?**
+<a href='https://www.gopanel.org/command.php?Command=alias'>alias</a>: Create an Alias Domain (Parked Domain) in GoPanel
 <br>
-To reinstall Apache or NGINX, run the following command as root:
-<br>
-/go/server
-<br>
-**Detecting and Resolving Server Problems**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/conf
-<br>
-If the problem still persists run:
-<br>
-/go/reinstall
 <br>
 
-**How do you remove invalid email addresses from your email campaign list?**
+<a href='https://www.gopanel.org/command.php?Command=antivirus'>antivirus</a>: Built-in GoPanel Antivirus
 <br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/undelivered
-<br>
-<br>
-1- Navigate to the GoPanel's Undelivered Emails interface (GoPanel >> Home >> Email >> Undelivered Emails).
-<br>
-2- Click Export as CSV
-<br>
-3- Remove Invalid Email Addresses from Mailing List
 <br>
 
-**How do I delete undelivered emails?**
+<a href='https://www.gopanel.org/command.php?Command=apache'>apache</a>: Convert a GoPanel Server from Nginx to Apache
 <br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/undelivered all
-<br>
-Or
-<br>
-/go/undelivered domain.com
 <br>
 
-**How do I set Date and time automatically in GoPanel?**
+<a href='https://www.gopanel.org/command.php?Command=apk'>apk</a>: Convert a Website to a Google Play App (WebView)
 <br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/timezone
-<br><br>
-How do I set DST time?
-<br>
-/go/dst
-<br>
-**How do I track bots in GoPanel?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/bot
-<br>
-**How do I delete undelivered emails?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/undelivered delete
 <br>
 
-**How can I check if port 25 is open?**
+<a href='https://www.gopanel.org/command.php?Command=autodiscover'>autodiscover</a>: Autodiscover for Outlook and Mail Apps
 <br>
-Connect to your Linux server via SSH and run the following command as root:
 <br>
-/go/checkmail
-<br>
-**How do I solve a \"Connection Refused\" error?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/connect
 
-**How to stop getting spam emails on GoPanel?**
-<br>
-Configure IP filter rules to block about (1M) Blacklist IP Addresses. Blacklist IP updated every 2 hours.
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/junk
-<br>
-**How to Block Bad Bots on Your Server?**
-<br>
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/blacklist
+<a href='https://www.gopanel.org/command.php?Command=backup'>backup</a>: Create Backup for all GoPanel accounts (Local & Remote Backup)
 
-**How can I determine the source IP of a DDOS attack?**
 <br>
-Connect to your Linux server via SSH and run the following command as root:
 <br>
-/go/ddos
-<br>
-**How to import a single table from a dump file in MySQL?**
-Connect to your Linux server via SSH and run the following command as root:
-<br>
-/go/table -f file.sql -t TableName -o out.sql
-<br>
-mariadb DatabaseName < out.sql
-<br>
-**How can I get the 10 most frequently executed SQL queries?**
-<br>
-This command will return the 10 most frequently executed SQL queries.
-<br>
-/go/querytop
-<br>
-**How can I get the SQL queries that are currently running on my MariaDB or MySQL server?**
-This will show only the active queries that are currently being executed and exclude idle connections.
-<br>
-/go/mysqltop
-<br>
-**How can I monitor web server traffic in real-time on Apache?**
-<br>
-You can use HTTPTOP to monitor web server traffic in real time. It provides an interactive, real-time view of Apache log files, displaying detailed statistics on incoming requests, traffic patterns, and server performance. This tool helps in quickly identifying high-traffic URLs, status codes, request counts, and server health.
-<br>
-/go/httptop
 
-**How can I change the Browser Cache TTL on Cloudflare?**
+<a href='https://www.gopanel.org/command.php?Command=blacklist'>blacklist</a>: Block Blacklist IPs (Bad Bots and SSH Brute Force Attacks)
+
 <br>
-To change the Browser Cache TTL on Cloudflare using the API via command line, you can use the following:
 <br>
-/go/cloudflare all browser 3600
+
+<a href='https://www.gopanel.org/command.php?Command=block'>block</a>: Block an IP address in GoPanel Server
 <br>
-**How can I solve the \"Too many certificates\" error in Let's Encrypt?**
-To solve the \"Too many certificates\" error in Let's Encrypt using the command line, you can follow these steps:
 <br>
-/go/ssl all --buypass
+
+<a href='https://www.gopanel.org/command.php?Command=bot'>bot</a>: Track All Bot Visits to Your Server (Good & Bad Bots)
+
 <br>
-/go/ssl all --limit
 <br>
-**How do I migrate my database from MySQL/MariaDB to PostgreSQL?**
+
+<a href='https://www.gopanel.org/command.php?Command=bottop'>bottop</a>: Block Bad Bots from Visiting Your Server
+
 <br>
-Converting from MySQL/MariaDB to PostgreSQL
 <br>
-mariadb-dump database_name > db.sql
+
+<a href='https://www.gopanel.org/command.php?Command=cf'>cf</a>: Copy all files from a source folder to a destination folder
 <br>
-/go/mariadb2postgre db.sql
 <br>
-PGPASSWORD=\"password\" psql -h localhost -U database_username -d database_name -f db.sql
+
+<a href='https://www.gopanel.org/command.php?Command=checkfirewall'>checkfirewall</a>: Verify and ensure that important required ports are open on your GoPanel server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=checkimap'>checkimap</a>: Check the IMAP port and SSL certificate
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=checkmail'>checkmail</a>: Check if your server provider supports mail port 25 (SMTP)
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=checkmx'>checkmx</a>: Check MX Priority Range for All Domains
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=checksmtp'>checksmtp</a>: Check the SMTP port and SSL certificate
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=checkssl'>checkssl</a>: Check if SSL certificates are installed for all domains on a GoPanel server
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=clamav'>clamav</a>: ClamAV is an open-source antivirus engine designed for detecting malware, viruses, trojans, and other malicious threats.
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=clean'>clean</a>: Clean and Remove Unnecessary Files in GoPanel to Free Up Space
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=clone'>clone</a>: Backup & Migrate GoPanel Server with All Configurations
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=cloudflare'>cloudflare</a>: Manage DNS records for domains hosted on GoPanel using Cloudflare's API
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=collectmail'>collectmail</a>: Collect All Email Addresses from All MySQL/MariaDB Databases on GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=compare'>compare</a>: Compare multiple GoPanel servers based on visits and resource usage
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=conf'>conf</a>: Rebuild the Apache/Nginx configuration in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=connect'>connect</a>: To grant root privileges to a GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=copy'>copy</a>: Copy a GoPanel site from one server to another
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=copydatabase'>copydatabase</a>: Copy MySQL/MariaDB Database from One GoPanel Server to Another
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=copytable'>copytable</a>: Copy MySQL/MariaDB Table from One GoPanel Server to Another
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=copywww'>copywww</a>: Copy www directory from One Domain to Another (Local Server & Remote Server)
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=create'>create</a>: Create a GoPanel account from the command line
 
 
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=cron'>cron</a>: Setting Up Main Cron Jobs in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=csv'>csv</a>: Export a MySQL/MariadB table to a CSV file
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=ddos'>ddos</a>: Track and Block DDoS Attack IPs in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=defaultphp'>defaultphp</a>: Change the Default PHP Version in CLI
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=delete'>delete</a>: Delete GoPanel account from the command line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=deletemailqueue'>deletemailqueue</a>: Deleting All Emails in the Postfix Mail Queue
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=disablefunctions'>disablefunctions</a>: Modify disable_functions for All PHP Versions in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=dns'>dns</a>: Add your domain to Cloudflare and editing the DNS zone
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=dropbear'>dropbear</a>: Installi Dropbear in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=dst'>dst</a>: Provides timezone definitions, daylight saving rules, and historical timezone changes.
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=encoder'>encoder</a>: Encode PHP code in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=expire'>expire</a>: Check Hosting and Domain Expiry Dates on GoPanel Server and Send Email/WhatsApp Notifications to Clients
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=findbom'>findbom</a>: Find BOM (Byte Order Mark) in PHP Files in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=firewall'>firewall</a>: Install a firewall on a GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=fix'>fix</a>: Fix GoPanel Files and Folder Permissions
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=fixquota'>fixquota</a>: Fix Quotas in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=font'>font</a>: Install Common Fonts on a GoPanel Server
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=fpm'>fpm</a>: Restart all installed PHP-FPM versions on your server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=fsync'>fsync</a>: Copy a directory from your local server to a remote server
+
+
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=gdown'>gdown</a>: Download files from Google Drive
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=help'>help</a>: AI Solution for Auto-Detecting and Solving GoPanel Server Problems
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=hostname'>hostname</a>: Change Hostname in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=http'>http</a>: Restart Apache or Nginx If Server has already switched from Apache to NGINX
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=httpd'>httpd</a>: Restart Apache or Nginx (in the background)
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=https'>https</a>: Redirect HTTP to HTTPS in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=httptop'>httptop</a>: Displays active HTTP requests in real-time
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=img-out-db'>img-out-db</a>: Remove Images Not Found in MySQL Database
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=img-resize'>img-resize</a>: Resize Images in GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=index'>index</a>: Automatic Indexing for MySQL Performance Optimization
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=innodb2myisam'>innodb2myisam</a>: Convert MariaDB/MySQL Tables from InnoDB to MyISAM in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installgo'>installgo</a>: Install the Go programming language (Golang)
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installmariadb'>installmariadb</a>: Install or update MariaDB to the Latest Version
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installphp'>installphp</a>: Install a Different PHP Version on GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installsqlite'>installsqlite</a>: Installi the Latest SQLite Version on GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installssh'>installssh</a>: Reinstall and enable OpenSSH Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installssl'>installssl</a>: Install Let's Encrypt SSL on GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=installwebp'>installwebp</a>: Installing WebP Support in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=interfaces'>interfaces</a>: Create Interfaces File for Proxmox
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=ioncube'>ioncube</a>: Install IonCube Loader on a GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=iptop'>iptop</a>: Track the Most Visited IP Addresses on a Server
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=junk'>junk</a>: Update the spam filter blacklist IPs on your GoPanel server to prevent spam messages
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=killgo'>killgo</a>: Stop a Go service (Golang) running on port 8080
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=listphp'>listphp</a>: List the Available PHP versions in a GoPanel server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=load'>load</a>: Load Server Configuration
+
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=loadavg'>loadavg</a>: Check the weekly server load average
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mail'>mail</a>: Create an email address in GoPanel via the command line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mailpwd'>mailpwd</a>: Bulk Changing Passwords for All Email Accounts in GoPanel for a Single Domain
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mailssl'>mailssl</a>: Installi SSL Certificates for SMTP and IMAP in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mailtop'>mailtop</a>: Check Most Active Email Accounts in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=maintenance'>maintenance</a>: Check GoPanel Services Status and Fixing Issues
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=maria'>maria</a>: Incremental MariaDB Backup to S3 or via Rclone
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mariadb2postgre'>mariadb2postgre</a>: Convert SQL File from MariaDB to PostgreSQL
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=maxexecutiontime'>maxexecutiontime</a>: Change the Max Execution Time for All PHP Versions in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mem'>mem</a>: Creat a MySQL Database via GoPanel Command Line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=memoryavg'>memoryavg</a>: Check Weekly Server Memory Average
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=memorylimit'>memorylimit</a>: Change PHP Memory Limit for All PHP Versions in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=minio'>minio</a>: Install MinIO on a GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=miniossl'>miniossl</a>: Install an SSL certificate for MinIO
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mqtt'>mqtt</a>: Install Mosquitto
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=multiphp'>multiphp</a>: Manage PHP Versions Per Domain
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=my'>my</a>: Optimize my.cnf configuration for MySQL/MariaDB
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=myisam2aria'>myisam2aria</a>: Convert MariaDB/MySQL Tables from MyISAM to Aria in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=myisam2innodb'>myisam2innodb</a>: Convert MariaDB/MySQL Tables from MyISAM to InnoDB in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mysql'>mysql</a>: Create a MySQL Database
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mysqlreset'>mysqlreset</a>: Change MySQL Root Password in Safe Mode
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mysqlset'>mysqlset</a>: Change MySQL Root Password
+
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mysqlsync'>mysqlsync</a>: Copy MySQL Databases from Local to Remote Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=mysqltop'>mysqltop</a>: Identifying the Most Accessed Databases on GoPanel Server
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=nameservers'>nameservers</a>: change the nameservers for a GoPanel server from the command line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=nginx'>nginx</a>: Convert a GoPanel Server from Apache to Nginx
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=nodejs'>nodejs</a>: Install the Latest Node.js Version on a GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=password'>password</a>: Change a GoPanel account password from the command line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=pgloader'>pgloader</a>: Install PGLoader
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=phpmyadmin'>phpmyadmin</a>: Install Latest phpMyAdmin on GoPanel Server via Command Line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=port'>port</a>: Change Default SSH Port (22) to Another Port in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=posttop'>posttop</a>: Track and Check IPs Making POST Requests to GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=proxmox'>proxmox</a>: Install Proxmox VE (Virtual Environment)
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=proxy'>proxy</a>: Change Cloudflare's proxy setting
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=purge'>purge</a>: Delet Cloudflare Edge Cache (Purge Everything)
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=querytop'>querytop</a>: Most Frequently Executed MySQL SQL Queries
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=quota'>quota</a>: Enable Disk Quotas in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=rainloop'>rainloop</a>: Installi RainLoop Webmail on GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=reid'>reid</a>: Resetting and Reordering Auto-Increment ID Fields in MySQL
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=removebom'>removebom</a>: Remove BOM from All PHP Files in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=removephp'>removephp</a>: Remove a PHP Version from GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=renew'>renew</a>: Update Hosting Expiry Date in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=repair'>repair</a>: Repair a MySQL Database
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=resolver'>resolver</a>: Change the DNS Resolver in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=restore'>restore</a>: Restore a GoPanel backup from the command line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=reversedns'>reversedns</a>: Check Reverse DNS (rDNS) in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=robots'>robots</a>: Create a robots.txt File for All GoPanel Accounts
+
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=root'>root</a>: Change GoPanel Root Password
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=roundcube'>roundcube</a>: Installi Roundcube Webmail on GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=s3'>s3</a>: Mount an S3 Bucket on a GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=save'>save</a>: Save Server Configuration
+
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=scp'>scp</a>: Copy GoPanel Backup from Local Server to Remote Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=smtp'>smtp</a>: Managing SMTP Port: Block, Unblock, and Change SMTP Port
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=smtplimit'>smtplimit</a>: Limiting Outgoing SMTP Emails per Email Address
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=spam'>spam</a>: Track Spam Email Accounts in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=speed'>speed</a>: How to Check Hard Disk Type, Speed, and Health
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=sql'>sql</a>: Create a MySQL database and import an SQL file into it
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=sshban'>sshban</a>: Block SSH Brute Force Attacks in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=ssl'>ssl</a>: Install an SSL Certificate for a Domain in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=sslsync'>sslsync</a>: Copy GoPanel Domain Accounts SSL Certificates from Local to Remote Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=storage'>storage</a>: Auto-Mount /storage folder on Boot using rclone
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=support'>support</a>: AI support solution for GoPanel server problems
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=suspend'>suspend</a>: Suspend a GoPanel Account via Command Line
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=sync'>sync</a>: Creat Incremental/Differential Backup for GoPanel Files
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=table'>table</a>: import a single table from a dump file in MySQL/MariaDB
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=timezone'>timezone</a>: Set the timezone for both your GoPanel server and PHP
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=troubleshoot'>troubleshoot</a>: Troubleshoot Email Problems in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=unblock'>unblock</a>: Unblock an IP address in GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=undelivered'>undelivered</a>: Delete Undeliverable Emails in GoPanel
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=unsuspend'>unsuspend</a>: Unsuspend a GoPanel Account via Command Line
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=update'>update</a>: To update GoPanel to the latest version via the command line
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=uptime'>uptime</a>: Monitor Multiple Server IPs for Uptime/Downtime
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=usertop'>usertop</a>: Check Recent Visitors per Domain
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=vendor'>vendor</a>: Vendor is a fundamental tool for modern PHP development
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=visits'>visits</a>: Check Daily Visits in GoPanel and Estimate How Many Visits Your Server Can Handle Daily
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=waf'>waf</a>: Block IPs via Cloudflare WAF
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=webmail'>webmail</a>: Install and Configuring Webmail Services (Postfix & Dovecot) in GoPanel
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=webp'>webp</a>: Convert Images to WebP Format
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=whatsapp'>whatsapp</a>: Automatically send your GoPanel server status and backup status to your mobile number
+
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=white'>white</a>: Add the IP to the Whitelist
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=xrdp'>xrdp</a>: Install xRDP on a GoPanel Server
+<br>
+<br>
+
+<a href='https://www.gopanel.org/command.php?Command=zerossl'>zerossl</a>: Install a ZeroSSL certificate via the command line
+<br>
+<br>
+<br>
 

@@ -2,6 +2,9 @@
 GoPanel Free Linux Web Hosting Control Panel
 <br><br>
 
+<a href='https://google.com'>Goo</a>
+
+
 **GoPanel Website:**
 <br>
 https://www.gopanel.org

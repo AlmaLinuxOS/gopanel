@@ -19,7 +19,7 @@ https://go.w75.net
 
 **An A-Z Index of the GoPanel command line:**
 <br>
-[https://go.w75.net](https://www.gopanel.org/command.php)
+https://www.gopanel.org/command.php
 <br><br>
 
 **How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?**

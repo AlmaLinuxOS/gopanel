@@ -17,6 +17,11 @@ curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
 https://go.w75.net
 <br><br>
 
+**An A-Z Index of the GoPanel command line:**
+<br>
+[https://go.w75.net](https://www.gopanel.org/command.php)
+<br><br>
+
 **How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?**
 <br>
 Connect to your Linux server via SSH and run the following command as root:

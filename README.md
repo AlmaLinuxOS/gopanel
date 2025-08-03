@@ -9,7 +9,7 @@ curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
 
 
 
-	<h1>How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?</h1>
+	# How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?
 	Connect to your Linux server via SSH and run the following command as root:
 	<br>
 	/go/encoder Domain Key

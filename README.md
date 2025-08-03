@@ -6,6 +6,7 @@ GoPanel Free Linux Web Hosting Control Panel
 curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
 <br>
 **How to Encrypt PHP Code (Warring: All files in domain will be encrypted)?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/encoder Domain Key
@@ -14,6 +15,7 @@ Example:
 <br>
 /go/encoder blackhost.com mypassword
 **How to Restore Full cPanel Backup via Go Panel?**
+<br>
 The first method is to restore the full cPanel backup via Go Panel. Of course, in order to be able to restore the backup using this method you need to have root access to Go Panel which is listening on port 2020. So if your domain is example.com, you can access Go Panel via web browser at http://example.com:2020.
 <br>
 Once you log in to Go Panel, navigate to Backups and then select Restore a Full Backup. This Go Panel feature will allow you to restore specific backup with File.
@@ -30,7 +32,7 @@ To restore with file, you must upload the full cPanel backup file to the followi
 Of course, you need to replace example with the actual cPanel username or filename.tar.gz for the account you want to restore. Also, make sure that the full cPanel backup is properly uploaded in the /backup directory on your server before starting the restoration process.
 
 **How to backup Go Panel accounts from one server to another Go Panel server?**
-<span class=Description>
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/backup all full scp RemoteIP root RemotePassword 22 /backup
@@ -40,7 +42,7 @@ or
 /go/backup all RemoteIP RemotePassword
 
 **How to transfer Go Panel accounts from one server to another Go Panel server?**
-<span class=Description>
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/copy Domain RemoteIP RemotePassword
@@ -50,6 +52,7 @@ To copy all accounts:
 /go/copy all RemoteIP RemotePassword
 
 **How to Backup & Migrate Go Panel Server with All Configurations?**
+<br>
 Setting Up a Fresh Remote Go Panel Server Without Websites, Just Install Go Panel
 <br>
 Connect to your Linux server via SSH and run the following command as root:
@@ -57,6 +60,7 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/clone RemoteIP RemotePassword
 
 **How to copy Go Panel backup file from one server to another Go Panel server?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/scp filename.tar.gz RemoteIP RemotePassword
@@ -66,6 +70,7 @@ Or
 /go/scp all RemoteIP RemotePassword
 
 **How to Copy Folder from Go Panel Server to Remote Backup Server(Storage Box)?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/backup &ltLocal Folder Path&gt &ltRemote Folder Path&gt
@@ -76,8 +81,8 @@ Example:
 <br>
 (Setup Schedule Backup Required via Dashboard)
 
-
 **How to Restore Folder from Remote Backup Server(Storage Box) to Local Go Panel Server?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/restore &ltRemote Folder Path&gt &ltLocal Folder Path&gt 
@@ -86,8 +91,8 @@ Example:
 <br>
 /go/restore /backup/home/ /home/
 
-
 **How to Restore Account from Remote Backup Server(Storage Box) to Local Go Panel Server?**
+<br>
 Connect to your Linux server (Local Server) via SSH and run the following command as root:
 <br>
 /go/restore Domain BackupDate
@@ -96,27 +101,26 @@ Example:
 <br>
 /go/restore blackhost.com 2023-01-30
 
-
 **How to Copy Database from Current Server to Another?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/copydatabase DatabaseName RemoteIP RemotePassword
 
 **How to Copy Database Table from Current Server to Another?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/copytable DatabaseName TableName RemoteIP RemotePassword
 
-
-
 **How to Convert Database from MyISAM  to InnoDB?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/myisam2innodb DatabaseName
 
 **How to Convert Table from MyISAM  to InnoDB?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/myisam2innodb DatabaseName TableName
@@ -126,6 +130,7 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/reid DatabaseName TableName
 
 **How do I switch between NGINX and Apache web server?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 <b>Switch to NGINX:</b>
@@ -137,11 +142,13 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/apache
 
 **How to Install an SSL Certificate on a Domain?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/ssl domain.com
 
 **How to Install an SSL Certificate for all domains?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/ssl all
@@ -152,11 +159,13 @@ To Check SSL Certificate Run:
 /go/checkssl
 
 **How do I force a new SSL certificate?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/ssl all --force
 
 **How to install PHP 7.1 and PHP 7.2 and all neccessary extensions?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/installphp 7.1
@@ -164,6 +173,7 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/installphp 7.2
 
 **How to set Default PHP Version in GoPanel?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/defaultphp 7.4
@@ -171,6 +181,7 @@ Connect to your Linux server via SSH and run the following command as root:
 php -v
 
 **How to Solve 502 Bad Gateway Issues?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/conf
@@ -180,6 +191,7 @@ If the problem still persists run:
 /go/reinstall
 
 **How to Increase Websites Speed?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/resolver OpenDNS
@@ -192,6 +204,7 @@ Wait 5 minutes then run:
 /go/index
 
 **Slow performance after securing websites with Lets Encrypt SSL**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/resolver
@@ -205,7 +218,7 @@ or
 /go/resolver Cloudflare
 
 **How do I access my webmail?**
-
+<br>
 <b>Steps for logging into webmail</b>
 <ol>
 <li>Visit example.com/webmail. Be sure to replace example.com with your actual domain name.</li>
@@ -215,7 +228,7 @@ or
 </ol>
 
 **How to change default SMTP port (25) in Go Panel?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/smtp 26
@@ -226,7 +239,7 @@ How do I get back to default settings?
 /go/smtp 25
 
 **How do I Update Roundcube?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/roundcube
@@ -236,13 +249,13 @@ How to Downgrade Roundcube?
 /go/roundcube 1.3.9
 
 **How to Install SquirrelMail on Go Panel?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/squirrelmail
 
 **How to set limitations for outgoing email?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/smtplimit 30
@@ -251,7 +264,7 @@ Connect to your Linux server via SSH and run the following command as root:
 30 emails per hour / user
 
 **How To Get Emails Delivered to Inbox?**
-
+<br>
 To send emails and avoid them being classified as spam 
 <br>
 Connect to your Linux server via SSH and run the following command as root:
@@ -259,6 +272,7 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/checksmtp
 
 **How to detect which account is sending spam?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/spam now
@@ -267,14 +281,15 @@ Connect to your Linux server via SSH and run the following command as root:
 To get the mail queue count:
 /go/spam count
 
-
 **How to Install ionCube Loader in Go Panel?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/ioncube
 <br>
 
 **How to Install Go Panel on Google Compute Engine (GCP) or (AWS)?**
+<br>
 Connect to your Linux (GCP) or (AWS) via SSH (Web Browsing) and run the following command:
 <br>
 Change the root password:
@@ -290,6 +305,7 @@ Start Install Go Panel:
 curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
 
 **How to Install Gdown in Go Panel?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/gdown
@@ -304,13 +320,14 @@ How to download a file from google drive using terminal?
 gdown --id &ltfile_id&gt
 
 **How do I set up nameservers?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/nameservers ns1.domain.com ns2.domain.com
 <br>
 
 **What does resetting a DNS zone do?**
+<br>
 If you add/delete DNS records and want to revert back to the original DNS, you can Reset the DNS Zone. This will remove all your custom DNS records and create the standard records for your domain.
 <br>
 <br>
@@ -339,7 +356,7 @@ Also, there must be a file named index.htm, index.html or index.php inside <b>ww
 <br>
 
 **How to Rebuild the Apache Configuration?**
-
+<br>
 To rebuild the Apache configuration file, run the following command as root:
 <br>
 /go/conf
@@ -348,7 +365,7 @@ To rebuild the Apache configuration file, run the following command as root:
 <br>
 
 **How to Reinstall Apache or NGINX?**
-
+<br>
 To reinstall Apache or NGINX, run the following command as root:
 <br>
 /go/server
@@ -356,6 +373,7 @@ To reinstall Apache or NGINX, run the following command as root:
 
 
 **Detecting and Resolving Server Problems**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/conf
@@ -365,7 +383,7 @@ If the problem still persists run:
 /go/reinstall
 
 **How do you remove invalid email addresses from your email campaign list?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/undelivered
@@ -379,7 +397,7 @@ Connect to your Linux server via SSH and run the following command as root:
 3- Remove Invalid Email Addresses from Mailing List
 
 **How do I delete undelivered emails?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/undelivered all
@@ -390,7 +408,7 @@ Or
 
 
 **How do I set Date and time automatically in GoPanel?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/timezone
@@ -405,16 +423,14 @@ Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/bot
 
-
-
 **How do I delete undelivered emails?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/undelivered delete
 
 **How can I check if port 25 is open?**
-
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/checkmail
@@ -427,19 +443,21 @@ Connect to your Linux server via SSH and run the following command as root:
 /go/connect
 
 **How to stop getting spam emails on Go Panel?**
+<br>
 Configure IP filter rules to block about (1M) Blacklist IP Addresses. Blacklist IP updated every 2 hours.
 <br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/junk
 
-
 **How to Block Bad Bots on Your Server?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/blacklist
 
 **How can I determine the source IP of a DDOS attack?**
+<br>
 Connect to your Linux server via SSH and run the following command as root:
 <br>
 /go/ddos
@@ -452,6 +470,7 @@ Connect to your Linux server via SSH and run the following command as root:
 mariadb DatabaseName < out.sql
 
 **How can I get the 10 most frequently executed SQL queries?**
+<br>
 This command will return the 10 most frequently executed SQL queries.
 <br>
 /go/querytop
@@ -462,15 +481,14 @@ This will show only the active queries that are currently being executed and exc
 <br>
 /go/mysqltop
 
-
 **How can I monitor web server traffic in real-time on Apache?**
+<br>
 You can use HTTPTOP to monitor web server traffic in real time. It provides an interactive, real-time view of Apache log files, displaying detailed statistics on incoming requests, traffic patterns, and server performance. This tool helps in quickly identifying high-traffic URLs, status codes, request counts, and server health.
 <br>
 /go/httptop
 
-
-
 **How can I change the Browser Cache TTL on Cloudflare?**
+<br>
 To change the Browser Cache TTL on Cloudflare using the API via command line, you can use the following:
 <br>
 /go/cloudflare all browser 3600
@@ -483,6 +501,7 @@ To solve the \"Too many certificates\" error in Let's Encrypt using the command 
 /go/ssl all --limit
 
 **How do I migrate my database from MySQL/MariaDB to PostgreSQL?**
+<br>
 Converting from MySQL/MariaDB to PostgreSQL
 <br>
 mariadb-dump database_name > db.sql
@@ -490,4 +509,5 @@ mariadb-dump database_name > db.sql
 /go/mariadb2postgre db.sql
 <br>
 PGPASSWORD=\"password\" psql -h localhost -U database_username -d database_name -f db.sql
+
 

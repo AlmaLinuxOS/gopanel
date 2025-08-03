@@ -18,8 +18,7 @@ https://go.w75.net
 <br><br>
 
 **An A-Z Index of the GoPanel command line**
-<br><br>
-
+<br>
 <a href='https://www.gopanel.org/command.php?Command=404top'>404top</a>: Block High Traffic 404 Visits on GoPanel Server<br>
 <a href='https://www.gopanel.org/command.php?Command=addon'>addon</a>: Create an Addon Domain in GoPanel<br>
 <a href='https://www.gopanel.org/command.php?Command=alias'>alias</a>: Create an Alias Domain (Parked Domain) in GoPanel<br>

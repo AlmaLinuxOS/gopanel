@@ -10,9 +10,8 @@ https://www.gopanel.org
 **Install GoPanel via command line:**
 ```bash
 curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
-
+```
 <br><br>
-
 **GoPanel Demo:**
 <br>
 https://go.w75.net

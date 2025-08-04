@@ -11,7 +11,6 @@ https://www.gopanel.org
 ```bash
 curl -s -o latest -L https://download.gopanel.org && chmod +x latest && ./latest
 ```
-<br><br>
 **GoPanel Demo:**
 <br>
 https://go.w75.net

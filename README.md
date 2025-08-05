@@ -1,5 +1,5 @@
 # GoPanel (cPanel/WHM Alternative)
-GoPanel Free Linux Web Hosting Control Panel
+GoPanel (cPanel Alternative) Free Linux Web Hosting Control Panel
 <br><br>
 
 **GoPanel Website:**
